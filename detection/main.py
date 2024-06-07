@@ -5,10 +5,10 @@ import easyocr
 import util
 from ultralytics import YOLO
 
-# Define path to the YOLO model weights
+# Define path to the model weights
 model_weights_path = os.path.join('detection', 'model', 'weights', 'best.pt')
 
-# Load the YOLOv8 model
+# Load the model
 model = YOLO(model_weights_path)
 
 def get_next_run_folder():
@@ -23,7 +23,7 @@ def process_image(img_path, run_folder):
     img = cv2.imread(img_path)
     H, W, _ = img.shape
 
-    # Perform detection using the YOLOv8 model
+    # Perform detection using the model
     results = model.predict(source=img_path, save=False, imgsz=640)
 
     bboxes = []

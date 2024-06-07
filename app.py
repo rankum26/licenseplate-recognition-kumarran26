@@ -2,7 +2,7 @@ import os
 import sys
 from flask import Flask, request, render_template, send_from_directory
 
-# Füge den Pfad zum 'detection' Verzeichnis hinzu
+
 sys.path.append(os.path.join(os.path.dirname(__file__), 'detection'))
 
 import main
@@ -21,11 +21,11 @@ def upload_image():
     if file.filename == '':
         return 'No selected file'
     if file:
-        # Erstelle den Run-Ordner
+        # create Run-folder
         run_folder = main.get_next_run_folder()
         os.makedirs(run_folder, exist_ok=True)
 
-        # Speichere das Bild im Run-Ordner
+        # save image to Run-folder
         file_path = os.path.join(run_folder, file.filename)
         file.save(file_path)
 

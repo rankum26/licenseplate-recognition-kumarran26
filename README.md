@@ -41,6 +41,6 @@ The best model from the training process is stored as best.pt in the runs/detect
 To run the Flask application, use the following command:
 python app.py
 
-The application provides a frontend where you can upload an image. If you don't have images of cars with license plates, you can use the provided example images in the example_pictures folder. After uploading an image, click the green submit button. The model will attempt to recognize the license plate and extract the characters. The output will display the recognized characters along with the confidence score.
+The application provides a frontend where you can upload an image. If you don't have images of cars with license plates, you can use the provided example images in the example_pictures folder. After uploading an image, click the green submit button. The model will attempt to recognize the license plate and extract the characters with OCR. The output will display the recognized characters along with the confidence score.
 Additionally, the page will show the uploaded image, the recognized plate, and a grayscale thresholded version of the plate. You can repeat the process by clicking "Upload another image."
 ![alt text](/README_pictures/image3.png)
