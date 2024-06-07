@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .preview {
+            max-width: 50%; /* Reduced size for the preview image */
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+        .results-container {
+            text-align: center;
+        }
+        .result-item {
+            margin-bottom: 10px;
+        }
+        .result-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .result-text {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>License Plate Reader by Ranujan Kumar</h1>
+    </header>
+    <main>
+        <div class="results-container">
+            <h2>Results</h2>
+            {% for text, score in result %}
+                {% if score == 0 %}
+                    <div class="result-text">No license plate detected or content could not be read. Please upload an image with better quality and ensure the license plate is visible.</div>
+                {% else %}
+                    <div class="result-item">
+                        <div class="result-title">License Plate:</div>
+                        <div class="result-text">{{ text }}</div>
+                        <div class="result-title">Confidence Score:</div>
+                        <div class="result-text">{{ score }}</div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <h2>Annotated Image</h2>
+        <img src="{{ url_for('send_file', filename=output_paths[-1]) }}" alt="Annotated Image" style="max-width: 100%; height: auto;">
+        <h2>Processed License Plates</h2>
+        {% for path in output_paths[:-1] %}
+            <h3>{{ path.split('_')[-1].split('.')[0].replace('-', ' ').capitalize() }}</h3>
+            <img src="{{ url_for('send_file', filename=path) }}" alt="{{ path.split('_')[-1].split('.')[0].replace('-', ' ').capitalize() }}" style="max-width: 100%; height: auto;">
+        {% endfor %}
+        <br>
+        <a href="{{ url_for('upload_form') }}" class="button">Upload Another Image</a>
+    </main>
+</body>
+</html>

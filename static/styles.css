@@ -1,0 +1,77 @@
+/* Styles for the entire body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Styles for the header */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* Styles for the main content */
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Styles for the image container */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px 0;
+}
+
+/* Styles for the upload form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Styles for the submit button */
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Styles for the submit button on hover */
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Styles for the "Upload another image" link */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #4CAF50;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Styles for the loader */
+#loader {
+    display: none;
+    text-align: center;
+}
+.responsive-image {
+    max-width: 100%;
+    height: auto;
+}

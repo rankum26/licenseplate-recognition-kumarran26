@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>License Plate Reader by Ranujan Kumar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        #loader {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.5em;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .motivation {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>License Plate Reader by Ranujan Kumar</h1>
+    </header>
+    <main>
+        <h2>How it Works</h2>
+        <p>Our system uses advanced image recognition technology to read license plates. When you upload an image, the system processes it to identify the license plate and outputs the result with a confidence score.</p>
+        
+        <h2>Upload an Image</h2>
+        <form action="/" method="post" enctype="multipart/form-data" onsubmit="showLoader()">
+            <input type="file" name="file" accept="image/*" onchange="previewImage(event)">
+            <input type="submit" value="Upload">
+        </form>
+        <img id="preview" class="preview" src="" alt="Image Preview">
+        <div id="loader">
+            <p>Processing your image, please wait...</p>
+        </div>
+
+        <div class="motivation">
+            <h2>Motivation</h2>
+            <p>Every year I drive to the Côte d’Azure by car and there's always traffic jams due to tolls in Italy and France. It would be better if you could just swipe the credit card at the beginning of the highway and have it automatically charge you based on where you exit. This would save time and be more efficient.</p>
+            <p>This is just one example of how barriers can cause delays and inefficiencies. We see them everywhere, from toll booths to parking garages. Each time we stop to pay a fee or wait for a gate to open, we lose time.</p>
+            <p>Imagine a world without barriers. With electronic toll collection systems, we could drive through without stopping. We could enter parking garages without taking a ticket.</p>
+            <p>This is not a dream of the future. It is a reality today. There are already a number of cities and countries that are using these technologies to make their transportation systems more efficient. For example, in the Archhöfe Winterthur parking garage, drivers can pre-register their license plate and payment method in the ParkingPay app, allowing them to enter the garage without taking a ticket. Upon entering, their license plate is recognized and their parking fee is automatically deducted upon exit.</p>
+            <p>I am passionate about this project because I believe it has the potential to make our lives easier and more efficient.</p>
+        </div>
+    </main>
+    <footer>
+        &copy; 2024 Ranujan Kumar
+    </footer>
+    <script>
+        function showLoader() {
+            document.getElementById('loader').style.display = 'block';
+        }
+
+        function previewImage(event) {
+            const preview = document.getElementById('preview');
+            const file = event.target.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function() {
+                preview.src = reader.result;
+                preview.style.display = 'block';
+            }
+
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+                preview.src = "";
+                preview.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
