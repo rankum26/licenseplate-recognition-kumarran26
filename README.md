@@ -1,6 +1,9 @@
 #License Plate Recognition Project
 ------------------
 
+Python version = 3.10.11
+Requirements: detection\requirements.txt
+
 #Problem and Motivation
 ------------------
 Every year I drive to the Côte d’Azure by car and there's always traffic jams due to tolls in Italy and France. It would be better if you could just swipe the credit card at the beginning of the highway and have it automatically charge you based on where you exit. This would save time and be more efficient.
@@ -15,7 +18,7 @@ I am passionate about this project because I believe it has the potential to mak
 
 #Data Collection
 ------------------
-To gather data, I used all available car pictures from my smartphone that clearly show license plates. Although the dataset is not big, it is challenging to find a publicly available dataset with license plates, especially from Switzerland.
+To gather data, I used all available car pictures from my smartphone that clearly show license plates. Although the dataset is not big, it is challenging to find a publicly available dataset with license plates, especially from Switzerland. [Dataset](https://github.com/rankum26/licenseplate-recognition-training-kumarran26/tree/main/data_new/images/train) 
 
 #Annotation
 ------------------
@@ -25,6 +28,8 @@ For the annotation process, I used [CVAT](https://www.cvat.ai/). I uploaded all 
 #Training
 ------------------
 The training part of the project is not included in this repository due to a bug that required separating it. You can find the training repository [here](https://github.com/rankum26/licenseplate-recognition-training-kumarran26). In that repository, I trained the model for 100 epochs, which took approximately 8 hours. Shorter training sessions did not yield usable results.
+
+![alt text](/README_pictures/image4.png)
 
 The training process generated valuable metrics such as confusion matrices, F1 curves, precision-recall curves, and detailed training and validation logs.
 ![alt text](/README_pictures/image2.png)
