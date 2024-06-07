@@ -4,7 +4,9 @@ This is a license plate recognition project that involves training a model with 
 
 
 Python version = 3.10.11
+
 Requirements: [detection\requirements.txt](https://github.com/rankum26/licenseplate-recognition-kumarran26/blob/main/detection/requirements.txt)
+
 License Plate Recognition Training Repo: https://github.com/rankum26/licenseplate-recognition-training-kumarran26
 
 #Problem and Motivation
