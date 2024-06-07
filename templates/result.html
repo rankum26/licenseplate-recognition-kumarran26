@@ -48,15 +48,17 @@
     <main>
         <div class="results-container">
             <h2>Results</h2>
-            {% for text, score in result %}
-                {% if score == 0 %}
+            {% for text, ocr_score, detection_score in result %}
+                {% if ocr_score == 0 %}
                     <div class="result-text">No license plate detected or content could not be read. Please upload an image with better quality and ensure the license plate is visible.</div>
                 {% else %}
                     <div class="result-item">
                         <div class="result-title">License Plate:</div>
                         <div class="result-text">{{ text }}</div>
-                        <div class="result-title">Confidence Score:</div>
-                        <div class="result-text">{{ score }}</div>
+                        <div class="result-title">OCR Confidence Score:</div>
+                        <div class="result-text">{{ ocr_score }}</div>
+                        <div class="result-title">License Plate Detection Confidence Score:</div>
+                        <div class="result-text">{{ detection_score }}</div>
                     </div>
                 {% endif %}
             {% endfor %}

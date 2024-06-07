@@ -53,7 +53,7 @@ def process_image(img_path, run_folder):
     detected = False
     output_paths = []
 
-    for bbox_ in bboxes:
+    for i, bbox_ in enumerate(bboxes):
         xc, yc, w, h = bbox_
         license_plate = img[int(yc - (h / 2)):int(yc + (h / 2)), int(xc - (w / 2)):int(xc + (w / 2)), :].copy()
         img = cv2.rectangle(img, (int(xc - (w / 2)), int(yc - (h / 2))), (int(xc + (w / 2)), int(yc + (h / 2))), (255, 105, 180), 15)
@@ -69,7 +69,7 @@ def process_image(img_path, run_folder):
             # Debugging the detected text and score
             print(f"Detected Text: {text}, Score: {text_score}")
             if text_score > 0.1:  # Ensure the score threshold is low enough to capture the detected text
-                results.append((text, text_score))
+                results.append((text, text_score, scores[i]))
                 detected = True
 
         license_plate_path = os.path.join(run_folder, f'{base_filename}_license_plate.jpg')
@@ -94,7 +94,7 @@ def process_image(img_path, run_folder):
     print("Output Paths:", output_paths)
 
     if not detected:
-        results.append(("No license plate detected. Please choose another image with higher quality, ensuring the whole car is visible.", 0))
+        results.append(("No license plate detected. Please choose another image with higher quality, ensuring the whole car is visible.", 0, 0))
 
     output_paths = [os.path.relpath(path, 'runs_done').replace("\\", "/") for path in output_paths if isinstance(path, str)]
 

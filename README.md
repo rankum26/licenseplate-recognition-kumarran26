@@ -1,8 +1,11 @@
 #License Plate Recognition Project
 ------------------
+This is a license plate recognition project that involves training a model with a custom dataset to detect license plates in images. The trained model identifies the license plates, and with the help of OCR (Optical Character Recognition), it extracts the alphanumeric characters from the detected plates. The output includes the recognized text along with the confidence scores of both the OCR and the license plate recognition model.
+
 
 Python version = 3.10.11
 Requirements: [detection\requirements.txt](https://github.com/rankum26/licenseplate-recognition-kumarran26/blob/main/detection/requirements.txt)
+License Plate Recognition Training Repo: https://github.com/rankum26/licenseplate-recognition-training-kumarran26
 
 #Problem and Motivation
 ------------------
@@ -45,8 +48,8 @@ install requirements.txt
 To run the Flask application, use the following command:
 python app.py
 
-The application provides a frontend where you can upload an image. If you don't have images of cars with license plates, you can use the provided example images in the example_pictures folder. After uploading an image, click the green submit button. The model will attempt to recognize the license plate and extract the characters with OCR. The output will display the recognized characters along with the confidence score.
-Additionally, the page will show the uploaded image, the recognized plate, and a grayscale thresholded version of the plate. You can repeat the process by clicking "Upload another image."
+The application provides a frontend where you can upload an image. If you don't have images of cars with license plates, you can use the provided example images in the example_pictures folder. After uploading an image, click the green submit button. The model will attempt to recognize the license plate and extract the characters with OCR. OCR is used to extract the text from detected license plates in images. After the license plate is identified and its region is cropped from the image, the OCR engine (EasyOCR in this case) processes this cropped image to recognize and extract the alphanumeric characters on the license plate. I did not train the OCR model. I only trained the license plate recognition model. The extracted text is then displayed along with a confidence score, indicating the reliability of the OCR result.
+The result page will show also the uploaded image, the recognized plate, and a grayscale thresholded version of the plate. You can repeat the process by clicking "Upload another image."
 ![alt text](/README_pictures/image3.png)
 
 
