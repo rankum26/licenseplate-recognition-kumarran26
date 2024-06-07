@@ -27,7 +27,7 @@ For the annotation process, I used [CVAT](https://www.cvat.ai/). I uploaded all 
 
 #Training
 ------------------
-The training part of the project is not included in this repository due to a bug that required separating it. You can find the training repository [here](https://github.com/rankum26/licenseplate-recognition-training-kumarran26). In that repository, I trained the model for 100 epochs, which took approximately 8.5 hours. Shorter training sessions did not yield usable results.
+The training section of the project is excluded from this repository because it became too cluttered, lost its clarity and it's easy to copy-paste the trained model into the model folder here. You can find the training repository [here](https://github.com/rankum26/licenseplate-recognition-training-kumarran26). In that repository, I trained the model for 100 epochs, which took approximately 8.5 hours. Shorter training sessions did not yield usable results.
 
 ![alt text](/README_pictures/image4.png)
 
