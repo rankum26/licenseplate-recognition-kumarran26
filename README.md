@@ -1,5 +1,5 @@
 #License Plate Recognition Project
-
+------------------
 
 #Problem and Motivation
 ------------------
@@ -9,25 +9,27 @@ This is just one example of how barriers can cause delays and inefficiencies. We
 
 Imagine a world without barriers. With electronic toll collection systems, we could drive through without stopping. We could enter parking garages without taking a ticket.
 
-This is not a dream of the future. It is a reality today. There are already a number of cities and countries that are using these technologies to make their transportation systems more efficient. For example, in the Archhöfe Winterthur parking garage, drivers can pre-register their license plate and payment method in the ParkingPay app, allowing them to enter the garage without taking a ticket. Upon entering, their license plate is recognized and their parking fee is automatically deducted upon exit.
+This is not a dream of the future, it's a reality today. There are already a number of cities and countries that are using these technologies to make their transportation systems more efficient. For example, in the Archhöfe Winterthur parking garage, drivers can pre-register their license plate and payment method in the ParkingPay app, allowing them to enter the garage without taking a ticket. Upon entering, their license plate is recognized and their parking fee is automatically deducted upon exit.
 
 I am passionate about this project because I believe it has the potential to make our lives easier and more efficient.
 
 #Data Collection
 ------------------
-To gather data, I used all available car pictures from my smartphone that clearly show license plates. Although the dataset is not extensive, it is challenging to find a publicly available dataset with license plates, especially from Switzerland. This small but focused dataset serves as a valuable resource for training and testing the ALPR model.
+To gather data, I used all available car pictures from my smartphone that clearly show license plates. Although the dataset is not big, it is challenging to find a publicly available dataset with license plates, especially from Switzerland.
 
 #Annotation
 ------------------
-For the annotation process, I used CVAT (Computer Vision Annotation Tool). I uploaded all 249 images to CVAT and manually annotated them, marking the license plates. The annotations were then exported in YOLOv1.1 format, resulting in a set of label files (.txt) corresponding to each image. These label files are crucial for training the model.
+For the annotation process, I used [CVAT](https://www.cvat.ai/). I uploaded all 249 images to CVAT and manually annotated them, marking the license plates. The annotations were then exported in YOLOv1.1 format, resulting in a set of label files (.txt) corresponding to each image. These label files are crucial for training the model.
+![alt text](/README_pictures/image.png)
 
 #Training
 ------------------
-The training part of the project is not included in this repository due to a bug that required separating it. You can find the training repository [here](https://github.com/rankum26). In that repository, I trained the model for 100 epochs, which took approximately 8 hours. Shorter training sessions did not yield usable results.
+The training part of the project is not included in this repository due to a bug that required separating it. You can find the training repository [here](https://github.com/rankum26/licenseplate-recognition-training-kumarran26). In that repository, I trained the model for 100 epochs, which took approximately 8 hours. Shorter training sessions did not yield usable results.
 
 The training process generated valuable metrics such as confusion matrices, F1 curves, precision-recall curves, and detailed training and validation logs.
+![alt text](/README_pictures/image2.png)
 
-The best model from the training process is stored as best.pt in the runs/detect/train4 folder, which you can find in the training repository. Copy this model and place it in this project's detection/model directory. This repository already includes the best.pt model for your convenience, but you can replace it with your own trained model if desired.
+The best model from the training process is stored as best.pt in the runs/detect/trainXX folder, which you can find in the training repository. Copy this model and place it in this project's detection/model directory. This repository already includes the best.pt model for your convenience, but you can replace it with your own trained model if desired.
 
 #Running the Application
 ------------------
@@ -36,3 +38,4 @@ python app.py
 
 The application provides a frontend where you can upload an image. If you don't have images of cars with license plates, you can use the provided example images in the example_pictures folder. After uploading an image, click the green submit button. The model will attempt to recognize the license plate and extract the characters. The output will display the recognized characters along with the confidence score.
 Additionally, the page will show the uploaded image, the recognized plate, and a grayscale thresholded version of the plate. You can repeat the process by clicking "Upload another image."
+![alt text](/README_pictures/image3.png)
