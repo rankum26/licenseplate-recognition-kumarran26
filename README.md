@@ -9,6 +9,12 @@ Requirements: [detection\requirements.txt](https://github.com/rankum26/licensepl
 
 License Plate Recognition Training Repo: https://github.com/rankum26/licenseplate-recognition-training-kumarran26
 
+Used System for the project:
+OS: Windows 11
+Processor i7-11370H, 32GB RAM
+Visual Studio Code
+
+
 #Problem and Motivation
 ------------------
 Every year I drive to the Côte d’Azure by car and there's always traffic jams due to tolls in Italy and France. It would be better if you could just swipe the credit card at the beginning of the highway and have it automatically charge you based on where you exit. This would save time and be more efficient.
