@@ -54,6 +54,26 @@ The application provides a frontend where you can upload an image. If you don't 
 The result page will show also the uploaded image, the recognized plate, and a grayscale thresholded version of the plate. You can repeat the process by clicking "Upload another image."
 ![alt text](/README_pictures/image3.png)
 
+#Interpretation and Validation
+------------------
+Upon training the model for license plate recognition on my custom dataset, I proceeded to interpret and evaluate the performance of the model. The primary objective was to accurately detect and recognize license plates in images, followed by using OCR to extract the characters from the detected license plates with confidence scores. The license plate recognition model was trained and evaluated using two different settings: 50 epochs and 100 epochs.
+
+Confusion Matrix: The confusion matrix for the 100 epochs model demonstrated superior performance, with 269 true positives and 19 false positives, compared to the 50 epochs model, which had 262 true positives and 32 false positives. This indicates that the 100 epochs model was more effective in correctly identifying license plates and minimizing false detections.
+
+F1-Confidence Curve: The F1-Confidence Curve highlighted that the 100 epochs model achieved a higher peak F1 score of 0.97 at a confidence threshold of 0.512, compared to the 50 epochs model, which had a peak F1 score of 0.96 at a threshold of 0.536. This demonstrates the better balance between precision and recall achieved by the 100 epochs model.
+
+Precision-Confidence Curve: The Precision-Confidence Curve for the 100 epochs model indicated that it reached perfect precision at a confidence threshold of 0.858, whereas the 50 epochs model achieved perfect precision at 0.812. This suggests that the 100 epochs model was better at maintaining high precision with fewer false positives at higher confidence levels.
+Precision-Recall Curve: The Precision-Recall Curve showed that the 100 epochs model had a mean Average Precision (mAP) of 0.984, which is higher than the 50 epochs model’s mAP of 0.976. This metric further supports the improved performance of the 100 epochs model.
+
+Recall-Confidence Curve: The Recall-Confidence Curve for the 100 epochs model maintained high recall up to a confidence threshold of 0.5 before declining, while the 50 epochs model exhibited a sharp decline in recall after 0.6, indicating that the 100 epochs model was more consistent in detecting true positives.
+
+Annotated Images: Comparing the annotated images from both models, the 100 epochs model demonstrated higher accuracy and confidence in its detections. It correctly identified license plates with higher confidence scores, typically above 0.80, whereas the 50 epochs model occasionally misidentified non-license plate regions with lower confidence scores, such as 0.45.
+
+Manual Review: Human validation was performed by comparing the model's predictions with ground truth annotations. The 100 epochs model showed a higher agreement with human annotations, confirming its superior performance. The 50 epochs model, on the other hand, sometimes misidentified regions, demonstrating the importance of extended training.
+
+Validation with Confidence Scores
+The confidence scores provided by the model were used to evaluate the certainty of predictions. Higher confidence scores in the 100 epochs model indicated more reliable detections. This validation step confirmed that the model trained for 100 epochs not only performed better in terms of metrics but also provided more trustworthy predictions.
+
 
 #Help or Questions
 ------------------
