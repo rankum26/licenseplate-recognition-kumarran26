@@ -49,7 +49,7 @@ install requirements.txt
 
 you may have to do a quick fix on the app.py file 
 add ./detection
-![alt text](README_pictures\image0.png)
+![alt text](README_pictures/image0.png)
 
 To run the Flask application, use the following command:
 python app.py
