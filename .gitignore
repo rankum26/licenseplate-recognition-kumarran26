@@ -4,8 +4,6 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 
-# vscode settings
-.vscode/
 
 # Flask stuff:
 instance/
