@@ -47,6 +47,10 @@ The best model from the training process is stored as best.pt in the runs/detect
 Python version = 3.10.11
 install requirements.txt
 
+you may have to do a quick fix on the app.py file 
+add ./detection
+![alt text](README_pictures\image0.png)
+
 To run the Flask application, use the following command:
 python app.py
 
