@@ -44,8 +44,11 @@ The best model from the training process is stored as best.pt in the runs/detect
 #Running the Application
 ------------------
 
-Python version = 3.10.11
+Python version = 3.10.11 (venv)
+
 install requirements.txt
+
+
 
 you may have to do a quick fix on the app.py file choose 
 add ./detection to extraPaths
