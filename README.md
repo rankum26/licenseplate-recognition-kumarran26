@@ -3,7 +3,7 @@
 This is a license plate recognition project that involves training a model with a custom dataset to detect license plates in images. The trained model identifies the license plates, and with the help of OCR (Optical Character Recognition), it extracts the alphanumeric characters from the detected plates. The output includes the recognized text along with the confidence scores of both the OCR and the license plate recognition model.
 
 
-Python version = 3.10.11
+Python version = 3.10.11 (venv)
 
 Requirements: [detection\requirements.txt](https://github.com/rankum26/licenseplate-recognition-kumarran26/blob/main/detection/requirements.txt)
 
